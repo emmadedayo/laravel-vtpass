@@ -1,0 +1,42 @@
+{
+    "name": "emmadedayo/laravel-vtpass",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Emmadedayo\\VtPass\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Adenagbe Emmanuel",
+            "email": "emmadenagbe@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/emmadedayo/laravel-vtpass",
+    "keywords": ["Vtpass", "vtu", "airtime top up", "php", "bills", "nigeria"],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "~5|~6|~7|~8"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.5",
+        "mockery/mockery": "^1.4.4",
+        "phpunit/phpunit": "^9.5.10",
+        "sempro/phpunit-pretty-print": "dev-develop"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Emmadedayo\\VtPass\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Emmadedayo\\VtPass\\VTPassServiceProvider"
+            ],
+            "aliases": {
+                "Emmadedayo": "Emmadedayo\\Vtpass\\Facades\\Vtpass"
+            }
+        }
+    }
+}
