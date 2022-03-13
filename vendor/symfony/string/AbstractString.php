@@ -74,7 +74,7 @@ abstract class AbstractString implements \Stringable, \JsonSerializable
 
         foreach ($values as $k => $v) {
             if (\is_string($k) && '' !== $k && $k !== $j = (string) new static($k)) {
-                $keys ??= array_keys($values);
+                $keys = $keys ?? array_keys($values);
                 $keys[$i] = $j;
             }
 
@@ -455,7 +455,7 @@ abstract class AbstractString implements \Stringable, \JsonSerializable
                 $lastError = preg_last_error();
 
                 foreach (get_defined_constants(true)['pcre'] as $k => $v) {
-                    if ($lastError === $v && str_ends_with($k, '_ERROR')) {
+                    if ($lastError === $v && '_ERROR' === substr($k, -6)) {
                         throw new RuntimeException('Splitting failed with '.$k.'.');
                     }
                 }
